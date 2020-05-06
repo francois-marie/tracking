@@ -40,6 +40,7 @@ def generate_heat_map(x, y):
 
 
 
+
 if __name__ == "__main__":
 
     # load the coordinates file
@@ -55,8 +56,14 @@ if __name__ == "__main__":
     # calculate matrix H
     h = get_homograpy(pts_camera, pts_2D_plan)
 
+    # to get a mapping from a point on the camera to a point on the 2D plan
+    # provide a point you wish to map from image 1 to image 2
+    a = np.array([[154, 174]], dtype='float32')
+    a = np.array([a])
     # finally, get the mapping
-    pointsOut = cv2.perspectiveTransform(, h)
+    pointsOut = cv2.perspectiveTransform(a, h)
+
+
     plt.plot(pts_camera, '+')
     plt.plot(pts_camera, '+')
     plt.show()

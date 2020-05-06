@@ -1,7 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import cv2	    # import the OpenCV library
+import cv2   # import the OpenCV library
 from utils import *
 
 def get_homograpy(pts_camera, pts_2D_plan):

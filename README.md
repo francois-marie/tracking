@@ -2,7 +2,9 @@
 
 ## Extract image from camera
 
-## Get human position in the shot
+## Detecting human position in the shot
+
+* ``detecting.py`` to get the position of a face, body etc. on a picture
 
 ## Transcribe the position onto 2D plan
 
