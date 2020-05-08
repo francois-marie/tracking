@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-from personnal import path_to_cascade
+from tracking.personnal import path_to_cascade
 
 def get_face(img):
     """get the square of the position of a face on an image

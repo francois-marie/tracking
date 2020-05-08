@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2   # import the OpenCV library
-from utils import *
+from tracking.utils import *
 
 def get_homograpy(pts_camera, pts_2D_plan):
     """get the transformation which maps the camera shots to 2D plan.
@@ -81,6 +81,55 @@ def calibration(source):
     return(coordinates)
 
 
+def display_homographied_plan(h, source):
+    """displays the homographied version of the frame of the camera
+
+    Arguments:
+        h {homography} -- homography obtained after calibration
+        source {int or str} -- source of the channel: int for camera and str for video path
+    """
+    # TODO
+
+    cap=cv2.VideoCapture(source)
+    # Reading our first frame
+    ret1,frame1= cap.read()
+    cv2.imshow('window',frame1)
+
+    frame2 = cv2.perspectiveTransform(frame1, h)
+    cv2.imshow('homography',frame2)
+
+
+    while True:
+        if cv2.waitKey(20) == ord('q'):
+            # pour 'quitter'
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+    return()
+
 if __name__ == "__main__":
-    coordinates = calibration(1)
-    print(coordinates)
+
+    source=1
+
+    # coordinates = calibration(source)
+    coordinates = [(265, 245), (352, 243), (270, 349), (375, 344)]
+    # change format
+    coordinates = np.asarray([ list(coordinates[i]) for i in range (len(coordinates))])
+
+    pts_2D_plan = np.array([[1, 1], [1, 7], [4, 7], [4, 1]])
+
+    h = get_homograpy(coordinates, pts_2D_plan)
+
+
+
+    # provide a point you wish to map from image 1 to image 2
+    a = np.array([[154, 174]], dtype='float32')
+    a = np.array([a])
+
+    # finally, get the mapping
+    pointsOut = cv2.perspectiveTransform(a, h)
+
+
+
+

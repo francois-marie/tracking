@@ -3,7 +3,7 @@
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from homography import get_homograpy
+from tracking.homography import get_homograpy
 
 def generate_gaussian_points(n=10, scale=3):
     """Generating n points with a gaussian distribution
