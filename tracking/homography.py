@@ -40,20 +40,47 @@ def plot_maps(pts_2D_plan, pts_camera):
     return()
 
 
+def calibration(source):
+    """calibrate a source channel
+
+    Arguments:
+        source {int or str} -- int for camera channel str for video
+    """
+    cap = cv2.VideoCapture(1)
+
+    cv2.namedWindow("Frame")
+
+    def left_click(event, x, y, flags, params):
+        if (event == cv2.EVENT_LBUTTONDOWN):
+            coordinates.append((x, y))
+            print((x, y))
+        return()
+
+    cv2.setMouseCallback("Frame", left_click)
+
+    coordinates= []
+
+    while True:
+        _, frame = cap.read()
+
+        for center_position in coordinates:
+            cv2.circle(frame, center_position, 3, (0, 0, 255), -1)
+
+        cv2.imshow("Frame", frame)
+
+        key = cv2.waitKey(1)
+        if cv2.waitKey(20) == ord('e'):
+            # pour 'enregistrer'
+            break
+        elif (key == ord("d")):
+            coordinates = []
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+    return(coordinates)
+
+
 if __name__ == "__main__":
-
-    # provide points from camera
-    pts_camera = np.array([[154, 174], [702, 349], [702, 572],[1, 572], [1, 191]])
-    # corresponding points from 2D plan (i.e. (154, 174) matches (212, 80))
-    pts_2D_plan = np.array([[212, 80],[489, 80],[505, 180],[367, 235], [144,153]])
-
-    # calculate matrix H
-    h = get_homograpy(pts_camera, pts_2D_plan)
-
-    # provide a point you wish to map from image 1 to image 2
-    a = np.array([[154, 174]], dtype='float32')
-    a = np.array([a])
-
-    # finally, get the mapping
-    pointsOut = cv2.perspectiveTransform(a, h)
-    plot_maps(pts_2D_plan, pts_camera)
+    coordinates = calibration(1)
+    print(coordinates)
