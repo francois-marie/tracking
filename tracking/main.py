@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-from tracking.motion_detection import lauch_detection, countour_to_coordinate
+from tracking.motion_detection import launch_detection, countour_to_coordinate
 from tracking.homography import calibration, get_homograpy
 import tracking.heat_map
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # change format
     coordinates = np.asarray([ list(coordinates[i]) for i in range (len(coordinates))])
 
-    pts_2D_plan = np.array([[1, 1], [1, 7], [4, 7], [4, 1]])    # corresponding points in 2D plane
+    pts_2D_plan = np.array([[1, 1], [4, 1], [1, 7], [4, 7]])    # corresponding points in 2D plane
 
 
     ############
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         a = np.array([a])
 
         # finally, get the mapping
-        object_plan_coordinates.append(list(cv2.perspectiveTransform(a, h)))
+        object_plan_coordinates.append(list(cv2.perspectiveTransform(a, h)[0][0]))
 
     print(object_plan_coordinates)
 

@@ -112,7 +112,8 @@ if __name__ == "__main__":
 
     source=1
 
-    # coordinates = calibration(source)
+    coordinates = calibration(source)
+
     coordinates = [(265, 245), (352, 243), (270, 349), (375, 344)]
     # change format
     coordinates = np.asarray([ list(coordinates[i]) for i in range (len(coordinates))])
