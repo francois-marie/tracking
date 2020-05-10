@@ -5,6 +5,8 @@ data/
 gt.txt
 gt - Copie.txt
 det.txt
+*.rar
+old/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
