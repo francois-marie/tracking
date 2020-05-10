@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import cv2   # import the OpenCV library
 from tracking.utils import *
 
+from tracking.personnal import path_to_data, path_to_image
+
 def get_homograpy(pts_camera, pts_2D_plan):
     """get the transformation which maps the camera shots to 2D plan.
     At least four such points pairs and you can then get an estimate
@@ -46,7 +48,7 @@ def calibration(source):
     Arguments:
         source {int or str} -- int for camera channel str for video
     """
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(source)
 
     cv2.namedWindow("Frame")
 
@@ -80,7 +82,6 @@ def calibration(source):
 
     return(coordinates)
 
-
 def display_homographied_plan(h, source):
     """displays the homographied version of the frame of the camera
 
@@ -108,28 +109,54 @@ def display_homographied_plan(h, source):
     cv2.destroyAllWindows()
     return()
 
+def calibration_image(file_name, coordinates):
+    """calibrate a source image
+
+    Arguments:
+        file_name {int} -- image index
+        coordiantes {list} -- list of coordinates for homography to plot
+    """
+    prefix_length = 6 - len(str(file_name))
+    source = path_to_image + str(0)*prefix_length + str(file_name) +'.jpg'
+    print(source)
+    img = cv2.imread(source, 3000)
+    cv2.namedWindow("img")
+    def left_click(event, x, y, flags, params):
+        if (event == cv2.EVENT_LBUTTONDOWN):
+            coordinates.append((x, y))
+            print((x, y))
+        return()
+    cv2.setMouseCallback("img", left_click)
+    while True:
+        for center_position in coordinates:
+            cv2.circle(img, center_position, 3, (0, 0, 255), -1)
+        cv2.imshow("img", img)
+        key = cv2.waitKey(1)
+        if cv2.waitKey(20) == ord('e'):
+            # pour 'enregistrer'
+            file_name += 50
+            prefix_length = 6 - len(str(file_name))
+            source = path_to_image + str(0)*prefix_length + str(file_name) +'.jpg'
+            img = cv2.imread(source)
+            break
+        elif (key == ord("d")):
+            print(file_name)
+            coordinates = []
+    cv2.destroyAllWindows()
+    return(coordinates)
+
 if __name__ == "__main__":
 
-    source=1
+    # source=1
+    source = path_to_data + "mot\\train_station.webm"
 
-    coordinates = calibration(source)
-
-    coordinates = [(265, 245), (352, 243), (270, 349), (375, 344)]
-    # change format
-    coordinates = np.asarray([ list(coordinates[i]) for i in range (len(coordinates))])
-
-    pts_2D_plan = np.array([[1, 1], [1, 7], [4, 7], [4, 1]])
-
-    h = get_homograpy(coordinates, pts_2D_plan)
+    coordinates = [(1603, 689),
+                    (154, 650),
+                    (476, 364),
+                    (1477, 388)]
+    new_coordinates = calibration_image(2700, coordinates)
 
 
-
-    # provide a point you wish to map from image 1 to image 2
-    a = np.array([[154, 174]], dtype='float32')
-    a = np.array([a])
-
-    # finally, get the mapping
-    pointsOut = cv2.perspectiveTransform(a, h)
 
 
 

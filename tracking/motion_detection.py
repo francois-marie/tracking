@@ -30,7 +30,7 @@ def launch_detection(source):
         deltaframe=cv2.absdiff(gray1,gray2)
         cv2.imshow('delta',deltaframe)
         #threshold = cv2.threshold(deltaframe, 25, 255, cv2.THRESH_BINARY)[1]
-        threshold = cv2.threshold(deltaframe, 50, 255, cv2.THRESH_BINARY)[1]
+        threshold = cv2.threshold(deltaframe, 25, 255, cv2.THRESH_BINARY)[1]
         threshold = cv2.dilate(threshold,None)
         cv2.imshow('threshold',threshold)
 
@@ -46,7 +46,8 @@ def launch_detection(source):
             (x, y, w, h) = cv2.boundingRect(i)
 
             countour_frame.append([x, y, w, h])
-            cv2.rectangle(frame2, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            if (is_human(x, y, w, h)):
+                cv2.rectangle(frame2, (x, y), (x + w, y + h), (255, 0, 0), 2)
             # print(type(frame2))
             # print(frame2)
             # print(frame2[x:x+w, y:y+h])
@@ -71,6 +72,13 @@ def launch_detection(source):
     cv2.destroyAllWindows()
     return(countour_evolution)
 
+def is_human(x, y, w, h):
+
+    if (h/w >1.5 and h/w <3 and w > 20):
+        return(True)
+    else:
+        return(False)
+
 def countour_to_coordinate(countour):
     """from an array of countours gives the points for each time steps. each countour is a square (x, y, w, h) from which we create a point ((x+w)/2, y)
 
@@ -82,6 +90,6 @@ def countour_to_coordinate(countour):
 
 
 if __name__ == "__main__":
-    name_mot = "train_station.webm"
+    name_mot = "people_train_station.webm"
     path_mot = "D:\\CODE\\JUPYTER_PROJECTS\\tracking\\data\\mot\\"
     coordinates = launch_detection(path_mot + name_mot)

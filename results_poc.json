@@ -1,7 +1,7 @@
 {
-    "t0":0,
-    "tf":10,
-    "dt":1,
+    "t0": 0,
+    "tf": 111280,
+    "dt": 40,
     "points": [
         {
             "r_id": 1,
@@ -12,7 +12,1612 @@
             "r_type": "camera",
             "v_x": 0.1,
             "v_y": 0.1,
-            "md": {}
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
+        },
+        {
+            "r_id": 100,
+            "x": 404.0,
+            "y": 283,
+            "t": 821,
+            "t_id": 1,
+            "r_type": "camera",
+            "v_x": 0.1,
+            "v_y": 0.1,
+            "md": {
+                "exit": 0,
+                "sensor": {
+                    "accuracy": ""
+                }
+            }
         }
     ]
 }

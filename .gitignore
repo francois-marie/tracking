@@ -1,6 +1,14 @@
-personnal.py
+tracking/personnal.py
 *.jpg
 data/
+results_poc_before_homography.json
+results_poc_after_homography.json
+results_poc.json
+gt.txt
+gt - Copie.txt
+det.txt
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
