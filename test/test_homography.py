@@ -35,3 +35,50 @@ a = np.array([a])
 
 # finally, get the mapping
 pointsOut = cv2.perspectiveTransform(a, h)
+
+def test_homography_square(pts_camera, pts_2D, pt_test):
+    """verify if applying an homography  and its inverse gives identity
+
+    Arguments:
+        pts_camera {np.array} -- array of coordinates taken from the camera shot
+        pts_2D {np.Array} -- array of coordinates of corresponding points
+        pt_test {np.array} -- test point
+    """
+    h = get_homograpy(pts_camera, pts_2D)
+    h_back = get_homograpy(pts_2D, pts_camera)
+    pointsInterm = cv2.perspectiveTransform(pt_test, h)
+    pointsOut = cv2.perspectiveTransform(pointsInterm, h_back)
+    print("check test homography: ")
+    print(pt_test == pointsOut)
+    return(pointsOut)
+
+def test_coordinates(pts_camera, pts_2D):
+    """test if the homography applied on the coordinate points of the camera give the pts 2D
+
+    Arguments:
+        pts_camera {np.array} -- array of coordinates taken from the camera shot
+        pts_2D {np.Array} -- array of coordinates of corresponding points
+    """
+
+    h = get_homograpy(pts_camera, pts_2D)
+    for i in range (len(pts_camera)):
+        print(cv2.perspectiveTransform(pts_camera[i], h) == pts_2D[i])
+
+
+if __name__ == "__main__":
+    point_camera = np.array([[39, 161],
+                    [120, 91],
+                    [371, 98],
+                    [401, 172]])
+
+    pts_2D = np.array([[0, 11],
+                    [0, 0],
+                    [10, 0],
+                    [10, 11]])
+    pt_test = np.array([[154, 174]], dtype='float32')
+    pt_test = np.array([pt_test])
+
+    point_out = test_homography_square(point_camera, pts_2D, pt_test)
+
+    h = get_homograpy(point_camera, point_camera)
+    print(h)

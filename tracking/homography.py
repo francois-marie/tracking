@@ -148,13 +148,14 @@ def calibration_image(file_name, coordinates):
 if __name__ == "__main__":
 
     # source=1
-    source = path_to_data + "mot\\train_station.webm"
 
-    coordinates = [(1603, 689),
-                    (154, 650),
-                    (476, 364),
-                    (1477, 388)]
-    new_coordinates = calibration_image(2700, coordinates)
+    coordinates = [(78, 429)]
+    new_coordinates = calibration_image(1680, coordinates)
+
+
+    # video
+    source = path_to_data + "mot\\train_station.webm"
+    # calibration(source)
 
 
 

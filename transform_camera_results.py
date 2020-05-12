@@ -1,5 +1,8 @@
 import json
-
+import copy
+import numpy as np
+import cv2
+from tracking.homography import get_homograpy
 
 def export_json(data, name):
     with open(name, 'w', encoding='utf-8') as f:
@@ -10,7 +13,38 @@ def import_json(name):
     data = json.load(open(name, 'r'))
     return(data)
 
+class Point():
 
+    def init(self, r_id, x, y, t, t_id, r_type, exit, accuracy):
+        self.r_id = r_id
+        self.x = x
+        self.y = y
+        self.t = t
+        self.t_id = t_id
+        self.r_type = r_type
+        self.exit = exit
+        self.accuracy = accuracy
+
+    def get_necessary_info(self):
+        result_file = {
+            "r_id": self.r_id,
+            "x": self.x,
+            "y": self.y,
+            "t": self.t,
+            "t_id": self.t_id,
+            "r_type": self.r_type,
+            "md":{
+                "exit":self.exit
+            }
+        }
+        return(result_file)
+
+class ReadableData():
+    homographies = []
+
+
+    def init(self, homographies):
+        return()
 
 
 #########################################
@@ -150,69 +184,213 @@ def import_json(name):
 # En 3 tu enumerate sur les items du dict u_id, list_rids et en parcourant les r_ids, si (c'est le premier ou le dernier point ou si il est dans une zone autour d'un beacon), tu passes simplement son t_id à u_id
 
 
-user_dict = import_json("user_dict_300.json")
-beacon_dict = import_json("beacon_dict.json")
+# user_dict = import_json("user_dict_300.json")
+# beacon_dict = import_json("beacon_dict.json")
 
-result = import_json('results_poc_after_300.json')
+# result = import_json('results_poc_after_300.json')
 
-def inside_beacon(results, i, beacon_dict):
-    """know if a record is inside a beaon
+# def inside_beacon(results, i, beacon_dict):
+#     """know if a record is inside a beaon
 
-    Arguments:
-        results {dict} -- dict for the algo
-        i {int} -- index of record in list "points"
-        beacon_dict {dict} -- dict of referenced beacons bluetooth
-    """
-    x = results["points"][i]["x"]
-    y = results["points"][i]["y"]
-    for beacon in beacon_dict["beacon"]:
-        center_x = beacon["x"]
-        center_y = beacon["y"]
-        radius = beacon["r"]
-        if ((x - center_x)**2 + (y - center_y)**2 < radius**2):
-            return(True)
-    return(False)
-
-
-for i, (k, v) in enumerate(user_dict.items()):
-    # print(i, k, v)
-    # print("#"*10)
-    # print(k + "  "+str(v))
-    for r_id_of_u in v:
-        for i in range (len(result["points"])):
-            if (result["points"][i]["t_id"] == r_id_of_u):
-                # print("i : ", i)
-                if (r_id_of_u == user_dict[k][0] or r_id_of_u == user_dict[k][-1] or inside_beacon(result, i, beacon_dict)):
-                    result["points"][i]["t_id"] = int(k)
-                    result["points"][i]["r_type"] = "bluetooth"
-                    if (r_id_of_u == user_dict[k][-1]):
-                        result["points"][i]["md"]["exit"] = True
+#     Arguments:
+#         results {dict} -- dict for the algo
+#         i {int} -- index of record in list "points"
+#         beacon_dict {dict} -- dict of referenced beacons bluetooth
+#     """
+#     x = results["points"][i]["x"]
+#     y = results["points"][i]["y"]
+#     for beacon in beacon_dict["beacon"]:
+#         center_x = beacon["x"]
+#         center_y = beacon["y"]
+#         radius = beacon["r"]
+#         if ((x - center_x)**2 + (y - center_y)**2 < radius**2):
+#             return(True)
+#     return(False)
 
 
-export_json(result, 'results_poc_after_ennum.json')
+# for i, (k, v) in enumerate(user_dict.items()):
+#     # print(i, k, v)
+#     # print("#"*10)
+#     # print(k + "  "+str(v))
+#     for r_id_of_u in v:
+#         for i in range (len(result["points"])):
+#             if (result["points"][i]["t_id"] == r_id_of_u):
+#                 # print("i : ", i)
+#                 if (r_id_of_u == user_dict[k][0] or r_id_of_u == user_dict[k][-1] or inside_beacon(result, i, beacon_dict)):
+#                     result["points"][i]["t_id"] = int(k)
+#                     result["points"][i]["r_type"] = "bluetooth"
+#                     if (r_id_of_u == user_dict[k][-1]):
+#                         result["points"][i]["md"]["exit"] = True
 
-# check
-check_list = []
-for i in range (len(result["points"])):
-    if(result["points"][i]["t_id"] < 300):
-        check_list.append(i)
+
+# export_json(result, 'results_poc_after_ennum.json')
+
+# # check
+# check_list = []
+# for i in range (len(result["points"])):
+#     if(result["points"][i]["t_id"] < 300):
+#         check_list.append(i)
 
 
-
+########################################
 # change tf
 
+#########################################
+# diminuer le nombre d'utilisateurs à 50
 
-# affecter des points bluetooth par zone autour de supposés beacons bluetooth pour donner des points nominatifs
-#  au début et le plus possible au milieu des trajectoires
-# Ex: id < 1000 pour users et > 1000 pour les traces
-
-
-
-
-# liste des beacons avec leur position et leur rayon
+# load data
+# user_dict = import_json("user_dict_300.json")
 
 
-# SEND
+# new_user_dict = dict()
+# for i in range (1, 51):
+#     i = i+195
+#     new_user_dict[str(i)] = user_dict[str(i)]
+# export_json(new_user_dict, '50_user_dict.json')
+
+# result = import_json('results_poc_after_ennum.json')
+# user_dict = import_json("50_user_dict.json")
+
+# new_result_dict = copy.deepcopy(result)
+# new_result_dict["points"] = []
+
+# for record in result["points"]:
+#     r_id = record["r_id"]
+#     for user in user_dict.keys():
+#         if (r_id in user_dict[user]):
+#             new_result_dict["points"].append(record)
+
+# export_json(new_result_dict, 'results_poc_50_users.json')
+
+###########################################
+# enlever les records tels que y > y_seuil = 18
+# result = import_json('results_poc_50_users.json')
+# new_result = copy.deepcopy(result)
+# new_result["points"] = []
+# print(new_result)
+# y_seuil = 18
+# for record in result["points"]:
+#     if (record["y"] < y_seuil):
+#         new_result["points"].append(record)
+
+
+# export_json(new_result, 'results_poc_y_seuil.json')
+
+
+#####################################
+#  filtre les murs et caddies
+# murs: 242, 194, 190,
+# 178, 176, 175 , 171
+# velo: 288
+# TO REMOVE:
+# décor: 163, 164, 165, 166, 188, 190, 191, 192, 193, 194, 195, 240, 241, 242, 296
+# netoyage & caddies: 169, 57, 157, 167, 170, 181, 288
+
+# def remove_user(user_dict, result_dict, user_id):
+#     """remove a user from the dict of users and from the list of records
+
+#     Arguments:
+#         user_dict {dict} -- dict of user
+#         result_dict {dict} -- data for the algo
+#         user_id {int} -- index of user
+#     """
+#     records_to_remove = user_dict[str(user_id)]
+#     user_dict.pop(str(user_id), None)
+#     records_removed = 0
+#     for r_id_to_remove in records_to_remove:
+#         for index_record in range (len(result_dict["points"])):
+#         # print(result_dict["points"][index_record]["r_id"])
+#             if (result_dict["points"][index_record]["r_id"] == r_id_to_remove):
+#                 del result_dict["points"][index_record]
+#                 records_removed += 1
+#                 break
+
+#     # check
+#     print(len(records_to_remove) == records_removed)
+#     return(user_dict, result_dict)
+
+# result = import_json("results_poc_after_ennum.json")
+# user_dict = import_json("user_dict_300.json")
+# users_to_remove = [169, 57, 157, 167, 170, 181, 288, 163, 164, 165, 166, 188, 190, 191, 192, 193, 194, 195, 240, 241, 242, 296]
+
+# for user in users_to_remove:
+#     new_user_dict, new_result = remove_user(user_dict, result, user)
+
+# # export
+# export_json(new_result, "results_poc_after_user_removal.json")
+# export_json(new_user_dict, "user_dict_after_user_removal.json")
+
+#################
+# changer tf: ok
+# changer à la main les quelques doubles exit =1,
+# une seule homographie,
+# mettre y seuil
+
+# results_poc_after_tf_exit.json
+
+####################
+# revert homography
+# change x and y from initial results
+
+# frame 1680
+# pts_camera = [
+#     [87, 432],
+#     [246, 287],
+#     [746, 292],
+#     [814, 441]
+# ]
+# pts_2D_plane = [
+#     [0, 11],
+#     [0, 0],
+#     [10, 0],
+#     [10, 11]
+# ]
+# h = get_homograpy(np.array(pts_camera), np.array(pts_2D_plane))
+
+# # import result
+# result = import_json("results_poc_after_tf_exit.json")
+# result_before_h = import_json("results_poc_before_homography.json")
+# for record in result["points"]:
+#     r_id = record["r_id"]
+#     r_id_in_list = r_id-300
+#     x = result_before_h["points"][r_id_in_list-1]["x"]
+#     y = result_before_h["points"][r_id_in_list-1]["y"]
+#     point_before = np.array([[x,y]], dtype='float32')
+#     point_before = np.array([point_before])
+#     pointsOut = cv2.perspectiveTransform(point_before, h)
+#     record["x"] = float(pointsOut[0][0][0])
+#     record["y"] = float(pointsOut[0][0][1])
+# # export
+# export_json(result, "results_poc_after_one_h.json")
+# # x and y to round
+
+
+######################
+# remove seuil
+
+###########################################
+# enlever les records tels que y > y_seuil = 18
+result = import_json('results_poc_after_one_h.json')
+new_result = copy.deepcopy(result)
+new_result["points"] = []
+print(new_result)
+y_seuil = 20
+for record in result["points"]:
+    if (record["y"] < y_seuil):
+        new_result["points"].append(record)
+
+
+export_json(new_result, 'results_poc_y_seuil.json')
+
+
+
+# TO SEND
 # user dict
 # beacon_dict
 # last results
+
+# Voici les résultats avec quelques modif:
+# * changer tf
+# * changer les quelques doubles exit =1,
+# * une seule homographie sur la frame 1680 assez stable à partir de la frame ~1500
+# * mettre y seuil = 20

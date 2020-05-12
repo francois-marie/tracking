@@ -1,5 +1,6 @@
 import copy
 from tracking.homography import get_homograpy
+import numpy as np
 
 num_list = []
 
@@ -154,14 +155,13 @@ images_coordinates = [[
                 ]
                 ]
 
-# multiply by two
+# multiply by two each coordinates
+# ex point_camera = np.array([[78, 322], [240, 182], [742, 196], [802, 344]])
+
 
 for i in range (len(images_coordinates)):
     images_coordinates[i] = [[2*term for term in coord] for coord in images_coordinates[i]]
 
-import numpy as np
-
-point_camera = np.array([[78, 322], [240, 182], [742, 196], [802, 344]])
 
 h = [get_homograpy(np.array(points_2D_plane), points_2D_plane) for points_2D_plane in images_coordinates]
 
@@ -198,7 +198,7 @@ def find_appropriate_homography(h, record):
         return()
     return()
 
-# change x and y for all recordsd with homography
+# change x and y for all records with homography
 
 import cv2
 for record in results["points"]:
