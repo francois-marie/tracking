@@ -150,12 +150,12 @@ if __name__ == "__main__":
     # source=1
 
     coordinates = [(78, 429)]
-    new_coordinates = calibration_image(1680, coordinates)
+    #new_coordinates = calibration_image(1680, coordinates)
 
 
     # video
     source = path_to_data + "mot\\train_station.webm"
-    # calibration(source)
+    calibration(source)
 
 
 

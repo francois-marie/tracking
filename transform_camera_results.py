@@ -2,7 +2,7 @@ import json
 import copy
 import numpy as np
 import cv2
-from tracking.homography import get_homograpy
+from tracking.homography import get_homograpy, calibration_image
 
 def export_json(data, name):
     with open(name, 'w', encoding='utf-8') as f:
@@ -13,13 +13,27 @@ def import_json(name):
     data = json.load(open(name, 'r'))
     return(data)
 
-class Point():
+def create_records_list_from_txt(name):
+    num_list = []
+    with open(name, 'r') as fh:
+        num_list = [line.split(',') for line in fh]
+    for line_index in range (len(num_list)):
+        # TODO: change the removal of the suffixe to get more data
+        num_list[line_index] = num_list[line_index][:6]
+    for line_index in range (len(num_list)):
+        for item in range (len(num_list[line_index])):
+            num_list[line_index][item] = int(num_list[line_index][item])
 
-    def init(self, r_id, x, y, t, t_id, r_type, exit, accuracy):
+
+class Point(dict):
+
+    def init(self, r_id, x, y, t, t_id, v_x = 0, v_y = 0, r_type='camera', exit=False, accuracy=None):
         self.r_id = r_id
         self.x = x
         self.y = y
         self.t = t
+        self.v_x = v_x
+        self.v_y = v_y
         self.t_id = t_id
         self.r_type = r_type
         self.exit = exit
@@ -39,12 +53,114 @@ class Point():
         }
         return(result_file)
 
+    def get_full_info(self):
+        result_file = {
+            "r_id": self.r_id,
+            "x": self.x,
+            "y": self.y,
+            "v_x": self.v_x,
+            "v_y": self.v_y,
+            "t": self.t,
+            "t_id": self.t_id,
+            "r_type": self.r_type,
+            "md":{
+                "exit":self.exit,
+                "accuracy":self.accuracy,
+            }
+        }
+        return(result_file)
+
+class Result(dict):
+
+    def init(self, t0, tf, dt, points):
+        self.t0 = t0
+        self.tf = tf
+        self.dt = dt
+        self.points = points
+
+    def get_full_info(self):
+        results = {
+                    "t0":self.t0,
+                    "tf":self.tf,
+                    "dt":self.dt,
+                    "points": self.generate_json_points()
+                }
+        return(results)
+
+    def generate_json_points(self):
+        result = []
+        for point in self.points:
+            result.append(point.get_necessary_info())
+        return(result)
+
 class ReadableData():
     homographies = []
+    camera_points = []
+    users = dict()
+    beacons = dict()
+    result = Result()
 
 
-    def init(self, homographies):
+    def init(self, homographies, camera_points):
+        self.homographies = homographies
+        self.camera_points = camera_points
+        self.build_resuls()
         return()
+
+    def get_full_info(self):
+        return(self.users, self.beacons, self.result.get_full_info())
+
+    def get_number_of_users(self):
+        nb_users = 0
+        for raw_point in self.camera_point:
+            if (raw_point[1] > nb_users):
+                nb_users = raw_point[1]
+        return(nb_users)
+
+    def build_results(self):
+        r_id = self.get_number_of_users + 1
+        for raw_point in self.camera_points:
+            new_point = Point(r_id,
+                            raw_point[2]+raw_point[4]/2,
+                            raw_point[3] + raw_point[5],
+                            raw_point[0],
+                            raw_point[1])
+            self.result.points.append(new_point)
+            r_id += 1
+
+    def build_users(self):
+        for point in self.result.points:
+            if (point.t_id in self.user_dict.keys()):
+                self.user_dict[point.t_id].append(point.r_id)
+            else:
+                self.user_dict[point.t_id] = [point.r_id]
+
+    def get_homography_from_frame(self, file_name):
+        coordinates = [(0, 0)]
+        camera_coordinates = calibration_image(file_name, coordinates)[1:]
+        # TODO:
+        # transform type of camera coordinates from list of tuple to list of lsit of int
+        # set or input the corresponding 2D points form the camera
+        # compute the homography
+        # store: the homography, the index of the frame
+
+def get_point_from_json(point_json):
+    point = Point(point_json["r_id"],
+                point_json["x"],
+                point_json["y"],
+                point_json["t"],
+                point_json["t_id"],
+                point_json["r_type"],
+                point_json["exit"])
+    return(point)
+
+
+def get_result_from_json(result_json):
+    result = Result(result_json["t0"],
+                    result_json["tf"],
+                    result_json["dt"],
+                    result_json["points"], )
+    return(result)
 
 
 #########################################
