@@ -23,6 +23,7 @@ def create_records_list_from_txt(name):
     for line_index in range (len(num_list)):
         for item in range (len(num_list[line_index])):
             num_list[line_index][item] = int(num_list[line_index][item])
+    return(num_list)
 
 
 class Point(dict):
@@ -93,12 +94,15 @@ class Result(dict):
             result.append(point.get_necessary_info())
         return(result)
 
+    def change_time(self):
+
+
 class ReadableData():
     homographies = []
     camera_points = []
     users = dict()
     beacons = dict()
-    result = Result()
+    result = Result(0, 0, 0, [])
 
 
     def init(self, homographies, camera_points):
@@ -117,7 +121,18 @@ class ReadableData():
                 nb_users = raw_point[1]
         return(nb_users)
 
+    def get_tf(self):
+        tf = 0
+        for raw_point in self.camera_point:
+            if (raw_point[0] > tf):
+                tf = raw_point[0]
+        return(tf)
+
+
+
     def build_results(self):
+        self.result.tf = self.get_tf()
+        self.result.dt = 1
         r_id = self.get_number_of_users + 1
         for raw_point in self.camera_points:
             new_point = Point(r_id,
@@ -135,14 +150,40 @@ class ReadableData():
             else:
                 self.user_dict[point.t_id] = [point.r_id]
 
+    def build_beacons(self):
+        self.beacons = {"beacon": []}
+        for pt_2D_plane in self.homographies[0][2]:
+            self.beacons["beacons"].append({"x": pt_2D_plane[0], "y": pt_2D_plane[1], "r": 3})
+
     def get_homography_from_frame(self, file_name):
         coordinates = [(0, 0)]
         camera_coordinates = calibration_image(file_name, coordinates)[1:]
-        # TODO:
-        # transform type of camera coordinates from list of tuple to list of lsit of int
+
         # set or input the corresponding 2D points form the camera
+        nb_points = len(camera_coordinates)
+        points_2D_plane =[]
+
+        for point_2D_plane in range (nb_points):
+            x = input("x-axis of first point")
+            y = input("y-axis of first point")
+            points_2D_plane.append([float(x), float(y)])
+
         # compute the homography
+        h = get_homograpy(np.array(camera_coordinates), np.array(points_2D_plane))
         # store: the homography, the index of the frame
+        self.homographies.append([file_name,
+                            camera_coordinates,
+                            points_2D_plane,
+                            h])
+
+    def remove_records_seuil(self, y_seuil):
+        # TODO test this function
+        # be careful w list removal while parcouring
+        for point in self.result.points:
+            if (point.y > y_seuil):
+                self.result.points.pop(point)
+
+
 
 def get_point_from_json(point_json):
     point = Point(point_json["r_id"],
@@ -161,6 +202,33 @@ def get_result_from_json(result_json):
                     result_json["dt"],
                     result_json["points"], )
     return(result)
+
+
+def solve(path):
+    name = path + 'gt.txt'
+    num_list = create_records_list_from_txt(name)
+    readable = ReadableData([], num_list)
+    readable.get_homography_from_frame(1)   # create homography from first frame
+    readable.build_users()
+    readable.build_beacons()
+    # TODO
+    # CHANGE TIME FROM FRAME TO ms: rajouter *40
+    # subsampler toutes les secondes au min
+
+
+
+    # si (c'est le premier ou le dernier point ou si il est dans une zone autour d'un beacon), tu passes simplement son t_id à u_id
+
+    # diminuer le nombre d'utilisateurs à 50
+
+    # enlever les records tels que y > y_seuil = 18
+    readable.remove_records_seuil(y_seuil=20)
+
+
+    # homographier x and y
+    # store float x & y on 5 digits
+
+    users_dict, beacons_dict, result_dict = readable.get_full_info()
 
 
 #########################################

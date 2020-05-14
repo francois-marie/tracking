@@ -123,7 +123,7 @@ def calibration_image(file_name, coordinates):
     cv2.namedWindow("img")
     def left_click(event, x, y, flags, params):
         if (event == cv2.EVENT_LBUTTONDOWN):
-            coordinates.append((x, y))
+            coordinates.append([x, y])
             print((x, y))
         return()
     cv2.setMouseCallback("img", left_click)
